@@ -5,7 +5,7 @@ import { loginOut } from '@/api/index'
 import { userStore } from '@/store/user'
 
 /**
- *  axios 不需要过度封装 https://github.com/axios/axios
+ *  axios https://github.com/axios/axios
  */
 export const http = axios.create({
   baseURL: import.meta.env.MODE === 'dev' ? '' : import.meta.env.VITE_APP_API,
@@ -26,7 +26,7 @@ http.interceptors.request.use(
 
 http.interceptors.response.use(
   (config) => {
-    // token 失效
+    // token 
     if (config.data.code === responseCodeEnum.LOGIN_CODE) {
       antdMessage.error(config.data.message)
       setTimeout(() => {
@@ -34,7 +34,7 @@ http.interceptors.response.use(
       }, 500)
       return Promise.reject(config.data)
     }
-    // 错误异常
+    // validate code
     else if (config.data.code !== responseCodeEnum.SUCCESS_CODE) {
       antdMessage.error(config.data.message)
       return Promise.reject(config.data)
@@ -51,13 +51,13 @@ http.interceptors.response.use(
       return Promise.reject(error)
     }
     if (message === 'Network Error')
-      message = '网络故障'
+      message = 'Network Error'
 
     else if (message.includes('timeout'))
-      message = '接口请求超时'
+      message = 'timeout'
 
     else if (message.includes('Request failed with status code'))
-      message = '接口异常'
+      message = 'Request failed'
 
     antdMessage.error(message)
     return Promise.reject(error)

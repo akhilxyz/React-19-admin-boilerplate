@@ -1,5 +1,5 @@
 /**
- * @description base64 转 file
+ * @description base64 to file
  * @param base64
  * @param fileName
  * @return
@@ -17,9 +17,9 @@ export function base64ToFile(base64: string, fileName: string) {
 }
 
 /**
- * @description 下载文件
- * @param url 图片链接
- * @param fileName 文件名
+ * @description downloadFile
+ * @param url string
+ * @param fileName string
  */
 export function downloadFile(url: string | URL, fileName: string) {
   const xhr = new XMLHttpRequest()

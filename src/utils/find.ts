@@ -1,6 +1,6 @@
 /**
- * @description 根据列表value 获取 label
- * @param list  列表数据
+ * @description getDictOptionsLabel
+ * @param list 
  * @returns {*} label
  */
 export function getDictOptionsLabel<T extends Record<string, any>>(

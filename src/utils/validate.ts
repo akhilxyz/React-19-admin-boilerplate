@@ -1,5 +1,5 @@
 /**
- * @description 判读是否为外链
+ * @description isExternal
  * @param path
  * @returns {boolean} boolean
  */
@@ -8,7 +8,7 @@ export function isExternal(path: string) {
 }
 
 /**
- * @description 校验密码是否小于6位
+ * @description isPassword
  * @param value
  * @returns {boolean} boolean
  */
@@ -17,7 +17,7 @@ export function isPassword(value: string | any[]) {
 }
 
 /**
- * @description 判断是否为数字
+ * @description isNumber
  * @param value
  * @returns {boolean} boolean
  */
@@ -27,7 +27,7 @@ export function isNumber(value: string) {
 }
 
 /**
- * @description 判断是否是名称
+ * @description isName
  * @param value
  * @returns {boolean} boolean
  */
@@ -37,7 +37,7 @@ export function isName(value: string) {
 }
 
 /**
- * @description 判断是否为IP
+ * @description isIP
  * @param ip
  * @returns {boolean} boolean
  */
@@ -48,7 +48,7 @@ export function isIP(ip: string) {
 }
 
 /**
- * @description 判断是否是传统网站
+ * @description isUrl
  * @param url
  * @returns {boolean} boolean
  */
@@ -59,7 +59,7 @@ export function isUrl(url: string) {
 }
 
 /**
- * @description 判断是否是小写字母
+ * @description isLowerCase
  * @param value
  * @returns {boolean} boolean
  */
@@ -69,7 +69,7 @@ export function isLowerCase(value: string) {
 }
 
 /**
- * @description 判断是否是大写字母
+ * @description isUpperCase
  * @param value
  * @returns {boolean} boolean
  */
@@ -79,7 +79,7 @@ export function isUpperCase(value: string) {
 }
 
 /**
- * @description 判断是否是大写字母开头
+ * @description isAlphabets
  * @param value
  * @returns {boolean} boolean
  */
@@ -89,7 +89,7 @@ export function isAlphabets(value: string) {
 }
 
 /**
- * @description 判断是否是字符串
+ * @description isString
  * @param value
  * @returns {boolean} boolean
  */
@@ -98,7 +98,7 @@ export function isString(value: any) {
 }
 
 /**
- * @description 判断是否是数组
+ * @description isArray
  * @param arg {boolean} boolean
  */
 export function isArray(arg: any) {
@@ -109,7 +109,7 @@ export function isArray(arg: any) {
 }
 
 /**
- * @description 判断是否是端口号
+ * @description isPort
  * @param value
  * @returns {boolean} boolean
  */
@@ -120,7 +120,7 @@ export function isPort(value: string) {
 }
 
 /**
- * @description 判断是否是手机号
+ * @description isPhone
  * @param value
  * @returns {boolean} boolean
  */
@@ -130,7 +130,7 @@ export function isPhone(value: string) {
 }
 
 /**
- * @description 判断是否是身份证号(第二代)
+ * @description isIdCard
  * @param value
  * @returns {boolean} boolean
  */
@@ -141,7 +141,7 @@ export function isIdCard(value: string) {
 }
 
 /**
- * @description 判断是否是邮箱
+ * @description isEmail
  * @param value
  * @returns {boolean} boolean
  */
@@ -151,7 +151,7 @@ export function isEmail(value: string) {
 }
 
 /**
- * @description 判断是否中文
+ * @description isChina
  * @param value
  * @returns {boolean} boolean
  */
@@ -161,7 +161,7 @@ export function isChina(value: string) {
 }
 
 /**
- * @description 是否包含中文字符
+ * @description isIncludeChina
  * @param value
  * @returns {boolean} boolean
  */
@@ -171,7 +171,7 @@ export function isIncludeChina(value: string) {
 }
 
 /**
- * @description 判断是否为空
+ * @description isBlank
  * @param value
  * @returns {boolean} boolean
  */
@@ -186,7 +186,7 @@ export function isBlank(value: string | null) {
 }
 
 /**
- * @description 判断是否为固话
+ * @description isTel
  * @param value
  * @returns {boolean} boolean
  */
@@ -197,7 +197,7 @@ export function isTel(value: string) {
 }
 
 /**
- * @description 判断是否为数字且最多两位小数
+ * @description isNum
  * @param value
  * @returns {boolean} boolean
  */
@@ -207,7 +207,7 @@ export function isNum(value: string) {
 }
 
 /**
- * @description 判断是否为json
+ * @description isJson
  * @param value
  * @returns {boolean} boolean
  */

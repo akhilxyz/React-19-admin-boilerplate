@@ -1,5 +1,5 @@
 /**
- * @description 退出登录
+ * @description loginOut
  */
 export function loginOut() {
   window.localStorage.clear()
