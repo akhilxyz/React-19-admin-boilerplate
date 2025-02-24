@@ -14,9 +14,6 @@ export default function AppMenu({ collapsed }: { collapsed: boolean }) {
 
 
   useEffect(() => {
-    console.log("collapsed", collapsed, menuList)
-  }, [collapsed]);
-  useEffect(() => {
     const openKeys = location.pathname.split('/').reduce((pre, cur) => {
       if (cur && !cur.includes('?')) {
         cur = `${pre.slice(-1) || ''}${cur.startsWith('/') ? cur : `/${cur}`}`

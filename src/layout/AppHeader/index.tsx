@@ -93,7 +93,7 @@ export default function AppHeader({
           </IconButton>
 
           <IconButton
-            onClick={() => window.open("https://github.com/akhilxyz")}
+            onClick={() => window.open("https://github.com/akhilxyz/React-19-admin-boilerplate")}
             title="View on GitHub"
           >
             <GithubOutlined className="text-lg" />

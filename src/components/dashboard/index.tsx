@@ -84,7 +84,7 @@ function Dashboard() {
             <ResponsiveContainer width="100%" height={300}>
               <PieChart>
                 <Pie data={userStats} cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#8884d8" dataKey="value" label>
-                  {userStats.map((entry, index) => (
+                  {userStats.map((_entry, index) => (
                     <Cell key={`cell-${index}`} fill={["#4F46E5", "#10B981", "#F59E0B"][index]} />
                   ))}
                 </Pie>

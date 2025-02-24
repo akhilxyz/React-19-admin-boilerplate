@@ -1,24 +1,18 @@
-import { useNavigate } from 'react-router-dom'
-import { Button } from 'antd'
+import { useNavigate } from "react-router-dom";
+import { Button } from "antd";
 
 export default function Error404() {
-  const navigate = useNavigate()
-  const goToIndex = () => {
-    navigate('/index')
-  }
+  const navigate = useNavigate();
+  const goToIndex = () => navigate("/index");
+
   return (
     <div
-      className="error-page h-full w-full flex justify-center items-center flex-col"
-      style={{ backgroundImage: 'linear-gradient(25deg, #094089, #7e536a, #bb6947, #f38100)' }}
+      className="h-screen w-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-900 via-red-700 to-orange-500"
     >
-      <div className="animate-bounce text-[30px]">404</div>
-      <Button
-        onClick={() => {
-          goToIndex()
-        }}
-      >
-        Page Not Found
+      <div className="text-white text-6xl font-bold animate-bounce mb-6">404</div>
+      <Button type="primary" onClick={goToIndex}>
+        Go to Home
       </Button>
     </div>
-  )
+  );
 }
