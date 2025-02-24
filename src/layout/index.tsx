@@ -7,6 +7,8 @@ import AppMain from '@/layout/AppMain';
 import AppTabs from '@/layout/AppTabs';
 import AppMenu from '@/layout/AppMenu';
 import { useThrottle } from '@/hooks/useThrottle';
+import { useLocation } from 'react-router-dom';
+import { blackList } from '@/enums';
 
 const { Sider, Header, Content } = Layout;
 
@@ -24,10 +26,20 @@ export default function AppLayout() {
   const [refreshing, setRefreshing] = useState(false);
   const { setMenuList } = routerStore();
   const [collapsed, setCollapsed] = useState(false);
+  const [showTabs, setShowTabs] = useState(true);
+  const location = useLocation()
 
   function handleSize() {
     setCollapsed(window.innerWidth < 800);
   }
+
+  useEffect(() => {
+    if(blackList.includes(location.pathname.replace('/', ''))) {
+      setShowTabs(false);
+    } else {
+      setShowTabs(true);
+    }
+  }, [location?.pathname]);
 
   function refresh() {
     setRefreshing(true);
@@ -59,7 +71,7 @@ export default function AppLayout() {
           <Layout>
             <Header className="h-auto px-0 leading-none" style={{ background: colorBgContainer, padding: '0px 20px 0px 0px' }}>
               <AppHeader collapsed={collapsed} setCollapsed={setCollapsed} />
-              <AppTabs />
+              {showTabs && <AppTabs />}
             </Header>
             <Content className="overflow-y-auto  overflow-hidden p-[20px]" style={{ margin: "50px" }}>
               <AppMain />

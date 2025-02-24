@@ -14,10 +14,15 @@ import { userStore } from "@/store/user";
 import { AppLayoutContext } from "@/layout";
 import { settingStore } from "@/store/setting";
 import { useFullscreen } from "@/hooks/useFullscreen";
+import { useNavigate } from "react-router-dom";
 
 const items: MenuProps["items"] = [
   {
     key: "1",
+    label: "settings",
+  },
+  {
+    key: "2",
     label: "Logout",
   },
 ];
@@ -33,9 +38,12 @@ export default function AppHeader({
   const { isDark, toggleDark, locale, toggleLocale } = settingStore();
   const { refresh } = useContext(AppLayoutContext);
   const [isFullscreen, { toggleFullscreen }] = useFullscreen(document.body);
-
+  const navigate = useNavigate()
   function onDropdownClick({ key }: any) {
     if (key === "1") {
+      navigate("/setting")
+    }
+    else if (key === "2") {
       window.localStorage.clear();
       window.location.reload();
     }
@@ -54,6 +62,7 @@ export default function AppHeader({
       <button
         onClick={onClick}
         className={`p-2 rounded-full flex items-center justify-center 
+          cursor-pointer
         ${isDark ? "text-gray-400 hover:bg-gray-800 hover:text-white" : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"}`}
       >
         {children}
@@ -71,11 +80,11 @@ export default function AppHeader({
           onClick={() => setCollapsed(!collapsed)}
           title={collapsed ? "Expand menu" : "Collapse menu"}
         >
-          <MenuOutlined className="text-lg" />
+          <MenuOutlined className="text-lg cursor-pointer" />
         </IconButton>
       </div>
       <div className="flex justify-end items-center gap-8">
-        <div className="flex justify-end items-center gap-2">
+        <div className="flex justify-end items-center gap-4">
           <IconButton
             onClick={() => toggleLocale(locale === "zh-cn" ? "en" : "zh-cn")}
             title={`Switch to ${locale === "zh-cn" ? "English" : "Chinese"}`}

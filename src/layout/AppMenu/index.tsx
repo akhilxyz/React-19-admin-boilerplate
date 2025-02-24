@@ -12,6 +12,10 @@ export default function AppMenu({ collapsed }: { collapsed: boolean }) {
   const location = useLocation()
   const navigate = useNavigate()
 
+
+  useEffect(() => {
+    console.log("collapsed", collapsed, menuList)
+  }, [collapsed]);
   useEffect(() => {
     const openKeys = location.pathname.split('/').reduce((pre, cur) => {
       if (cur && !cur.includes('?')) {

@@ -6,7 +6,7 @@ const Login = lazy(() => import('@/views/login'))
 const Error404 = lazy(() => import('@/views/error/404'))
 const Error403 = lazy(() => import('@/views/error/403'))
 
-interface IRoute {
+export interface IRoute {
   path: string
   element: React.ReactNode | null
   meta: {
