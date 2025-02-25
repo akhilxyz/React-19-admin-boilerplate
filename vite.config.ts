@@ -36,7 +36,7 @@ export default defineConfig({
   },
   // *console.log && debugger
   esbuild: {
-    pure: ['console.log', 'debugger'],
+    pure: ['console.log'],
   },
   build: {
     outDir: 'dist',

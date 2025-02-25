@@ -11,10 +11,11 @@ import {
   SwapOutlined,
 } from "@ant-design/icons";
 import { userStore } from "@/store/user";
-import { AppLayoutContext } from "@/layout";
+import { AppLayoutContext } from "@/layout/AppContext";
 import { settingStore } from "@/store/setting";
 import { useFullscreen } from "@/hooks/useFullscreen";
 import { useNavigate } from "react-router-dom";
+import Notification from "@/components/Notification";
 
 const items: MenuProps["items"] = [
   {
@@ -120,6 +121,13 @@ export default function AppHeader({
           <IconButton onClick={refresh} title="Refresh page">
             <ReloadOutlined className="text-lg" />
           </IconButton>
+          <Notification/>
+          {/* <IconButton onClick={refresh} title="Refresh page">
+          <BellOutlined/>
+            </IconButton> */}
+
+          
+          {/* <Notification/> */}
         </div>
 
         <Dropdown menu={{ items, onClick: onDropdownClick }} placement="bottomRight">

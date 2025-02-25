@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { tabsStore } from '@/store/tabs'
 import { routerStore } from '@/store/router'
 import { PageEnum } from '@/enums'
-import { AppLayoutContext } from '@/layout'
+import { AppLayoutContext } from '@/layout/AppContext'
 import '@/layout/AppTabs/index.scss'
 
 import { ReloadOutlined, CloseOutlined, LeftCircleOutlined, RightCircleOutlined } from '@ant-design/icons';
@@ -86,7 +86,7 @@ const AppTabs: React.FC = () => {
         key: item.id,
         label: (
           <div className="flex items-center">
-            <div>{ item.title}</div>
+            <div>{item.title}</div>
             <div className={`${item.icon} ml-[5px]`}></div>
           </div>
         ),

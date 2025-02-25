@@ -47,7 +47,7 @@ export default function AppMenu({ collapsed }: { collapsed: boolean }) {
           className="logo mx-[10px] h-[32px] w-[32px] rounded-full animate-spin !mr-2"
           alt="React logo"
         />
-        {!collapsed && <span className="overflow-hidden text-center">React-Admin</span>}
+        {!collapsed && <span className="overflow-hidden text-center">{import.meta.env.VITE_APP_NAME ? import.meta.env.VITE_APP_NAME : 'React-Admin'}</span>}
       </div>
       <Menu
         className="border-none"

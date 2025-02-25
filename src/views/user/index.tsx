@@ -99,7 +99,7 @@ function UserList() {
       <div className="mx-auto">
         <h1 className="text-2xl font-bold !mb-10">User Management</h1>
 
-        <div className="rounded-lg shadow-sm p-6 from-gray-900 to-blue-900 p-6">
+        <div className="rounded-lg shadow-sm p-6 from-gray-900 to-blue-900">
           <div className="!mb-6">
             <Space size="large">
               <Input

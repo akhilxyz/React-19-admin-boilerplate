@@ -1,5 +1,5 @@
 // import { useState } from 'react'
-import Dashboard from '@/components/dashboard'
+import Dashboard from '@/components/Dashboard'
 
 // const initializerCount = {
 //   create_video_num: 99,

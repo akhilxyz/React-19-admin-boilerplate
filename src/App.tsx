@@ -6,7 +6,6 @@ import dayjs from 'dayjs'
 import { ConfigProvider, theme, App as MyApp } from 'antd'
 import { routerList } from '@/router'
 import { userStore } from '@/store/user'
-
 import 'dayjs/locale/zh-cn'
 import { settingStore } from '@/store/setting'
 

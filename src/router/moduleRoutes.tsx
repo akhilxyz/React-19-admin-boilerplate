@@ -21,10 +21,19 @@ const modulesRoutes: Array<IRoute> = Object.entries(modules).map(([key, value]) 
     element: ((Component) => <Component />)(lazy(value)),
     meta: {
       title: path,
-      icon:  <AppstoreOutlined />
+      icon: <AppstoreOutlined />
     }
   };
 });
+
+const modifyRoute = (route: string) => {
+  if (route.includes("/")) {
+    return route.split("/").pop();
+  } else {
+    return route;
+  }
+}
+
 
 const menuList = buildTree(modulesRoutes);
 
@@ -32,19 +41,20 @@ function buildTree(routes: IRoute[]): IRoute[] {
   const root: IRoute[] = [];
 
   routes.forEach((route) => {
-    const parts = route.path.split('/').filter((part :any) => part);
+    const parts = route.path.split('/').filter((part: any) => part);
     let currentLevel = root;
-    parts.forEach((_part :any, index :any) => {
+    parts.forEach((_part: any, index: any) => {
       const partPath = `/${parts.slice(0, index + 1).join('/')}`;
       let existingNode = currentLevel.find((node) => node.path === partPath);
       if (!existingNode) {
+        const modRoute: any = modifyRoute(partPath.slice(1))
         existingNode = {
           path: partPath,
           element: null,
           children: [],
           meta: {
-            title: partPath.slice(1),
-            icon:  iconFactory(partPath.slice(1) )
+            title: modRoute,
+            icon: iconFactory(modRoute)
           }
         };
         currentLevel.push(existingNode);
@@ -53,15 +63,15 @@ function buildTree(routes: IRoute[]): IRoute[] {
       if (index === parts.length - 1) existingNode = { ...route };
 
       if (!existingNode.children) existingNode.children = [];
-
+      // console.log("currentLevel", existingNode.children)
       currentLevel = existingNode.children;
     });
   });
 
 
   const filteredData = root
-  .filter(item => !blackList.includes(item.path.replace('/', '')))
-  .sort((a, b) => (a.path === PageEnum.ROOT_INDEX ? -1 : b.path === PageEnum.ROOT_INDEX ? 1 : 0));
+    .filter(item => !blackList.includes(item.path.replace('/', '')))
+    .sort((a, b) => (a.path === PageEnum.ROOT_INDEX ? -1 : b.path === PageEnum.ROOT_INDEX ? 1 : 0));
 
   return filteredData;
 }

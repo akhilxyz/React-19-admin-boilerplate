@@ -1,7 +1,6 @@
-import { createContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Layout, Spin, theme } from 'antd';
 import { routerStore } from '@/store/router';
-
 import AppHeader from '@/layout/AppHeader';
 import AppMain from '@/layout/AppMain';
 import AppTabs from '@/layout/AppTabs';
@@ -9,15 +8,10 @@ import AppMenu from '@/layout/AppMenu';
 import { useThrottle } from '@/hooks/useThrottle';
 import { useLocation } from 'react-router-dom';
 import { blackList } from '@/enums';
-
+import { AppLayoutContext } from '@/layout/AppContext/index'
 const { Sider, Header, Content } = Layout;
 
-const defaultContext = {
-  refresh: () => ({})
-};
-export const AppLayoutContext = createContext<{
-  refresh: () => void;
-}>(defaultContext);
+
 
 export default function AppLayout() {
   const {
@@ -34,7 +28,7 @@ export default function AppLayout() {
   }
 
   useEffect(() => {
-    if(blackList.includes(location.pathname.replace('/', ''))) {
+    if (blackList.includes(location.pathname.replace('/', ''))) {
       setShowTabs(false);
     } else {
       setShowTabs(true);
@@ -53,8 +47,8 @@ export default function AppLayout() {
 
   useEffect(() => {
     setMenuList();
+    // eslint-disable-next-line
     throttledHandleSize();
-
     window.addEventListener('resize', throttledHandleSize);
     return () => {
       window.removeEventListener('resize', throttledHandleSize);
@@ -87,8 +81,3 @@ export default function AppLayout() {
   );
 }
 
-
-// .top-card {
-//   margin-top: 3rem;
-//   padding: 20px;
-// }
