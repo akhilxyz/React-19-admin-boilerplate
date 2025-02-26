@@ -1,4 +1,4 @@
-# React TypeScript Admin Boilerplate
+# React 19 TypeScript Admin Boilerplate
 
 A modern React application built with TypeScript, Vite, and Tailwind CSS. This project includes a comprehensive layout system, state management, custom hooks, and modular routing.
 
@@ -16,23 +16,27 @@ A modern React application built with TypeScript, Vite, and Tailwind CSS. This p
 ## Prerequisites
 
 Before you begin, ensure you have the following installed:
+
 - Node.js (version 22 or higher)
 - pnpm (recommended) or npm
 
 ## Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/akhilxyz/React-19-admin-boilerplate.git
 cd React-19-admin-boilerplate
 ```
 
 2. Install dependencies:
+
 ```bash
 pnpm install
 ```
 
 3. Start the development server:
+
 ```bash
 pnpm dev
 ```
@@ -63,16 +67,19 @@ src/
 ## Component Structure
 
 ### Layout
+
 - `AppHeader` - Main application header
 - `AppMenu` - Navigation menu
 - `AppMain` - Main content area
 - `AppTabs` - Tab management system
 
 ### Custom Hooks
+
 - `useFullscreen` - Handle fullscreen functionality
 - `useThrottle` - Throttle function calls
 
 ### Utilities
+
 - `http.ts` - HTTP request handling
 - `notify.ts` - Notification system
 - `validate.ts` - Form validation utilities
