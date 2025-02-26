@@ -1,14 +1,14 @@
-import React, { useContext, useEffect, useMemo, useState } from 'react'
 import type { MenuProps } from 'antd'
-import { Dropdown, Tabs } from 'antd'
-import { useLocation, useNavigate } from 'react-router-dom'
-import { tabsStore } from '@/store/tabs'
-import { routerStore } from '@/store/router'
 import { PageEnum } from '@/enums'
-import { AppLayoutContext } from '@/layout/AppContext'
-import '@/layout/AppTabs/index.scss'
+import { AppLayoutContext } from '@/layout/Context'
+import { routerStore } from '@/store/router'
+import { tabsStore } from '@/store/tabs'
+import { CloseOutlined, LeftCircleOutlined, ReloadOutlined, RightCircleOutlined } from '@ant-design/icons'
+import { Dropdown, Tabs } from 'antd'
+import React, { useContext, useEffect, useMemo, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 
-import { ReloadOutlined, CloseOutlined, LeftCircleOutlined, RightCircleOutlined } from '@ant-design/icons';
+import '@/layout/Tabs/index.scss'
 
 const operateList = [
   { id: 1, title: 'Refresh Current', icon: <ReloadOutlined className="text-lg" /> },
@@ -17,7 +17,7 @@ const operateList = [
   { id: 4, title: 'Close Left', icon: <LeftCircleOutlined className="text-lg" /> },
   { id: 5, title: 'Close Right', icon: <RightCircleOutlined className="text-lg" /> },
   { id: 6, title: 'Close All', icon: <CloseOutlined className="text-lg" /> },
-];
+]
 const AppTabs: React.FC = () => {
   const location = useLocation()
   const navigate = useNavigate()

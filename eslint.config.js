@@ -10,5 +10,7 @@ export default antfu({
   rules: {
     'no-console': 'off',
     'no-debugger': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'react/no-nested-components': 'off',
   },
 })

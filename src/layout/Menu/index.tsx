@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
 import type { MenuProps } from 'antd'
-import { Menu } from 'antd'
-import { useLocation, useNavigate } from 'react-router-dom'
 import Logo from '@/assets/react.svg'
 import { routerStore } from '@/store/router'
+import { Menu } from 'antd'
+import { useEffect, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 export default function AppMenu({ collapsed }: { collapsed: boolean }) {
   const { menuList } = routerStore()
@@ -11,7 +11,6 @@ export default function AppMenu({ collapsed }: { collapsed: boolean }) {
   const [openKeys, setOpenKeys] = useState<string[]>([])
   const location = useLocation()
   const navigate = useNavigate()
-
 
   useEffect(() => {
     const openKeys = location.pathname.split('/').reduce((pre, cur) => {
